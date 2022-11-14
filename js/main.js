@@ -8,7 +8,8 @@ buttonEl.addEventListener("click", function() {
     numbersEl.innerHTML = `${numList}`;
     console.log(numList);
 
-    setTimeout(myFunction, 30000);
+    setTimeout(emptyHtml, 3000);
+    setTimeout(userNumbers, 3500);
 })
 
 function generateRandomNumber (min, max) {
@@ -28,6 +29,24 @@ function generateNumList(totNum) {
     return numList;
 }
 
-function myFunction() {
+function emptyHtml() {
     numbersEl.innerHTML = ``;
+}
+
+function userNumbers() {
+    const numFound = [];
+
+    for (i = 0; i < 5; i++) {
+        const numInput = prompt("Inserisci i numeri che ricordi.");
+
+        if (numList.includes(parseInt(numInput))) {
+            numFound.push(numInput);
+            if (numFound.length === 5) {
+                alert("GG WP");
+            }
+        } else {
+            alert("ff, go next");
+            return
+        }
+    }
 }
