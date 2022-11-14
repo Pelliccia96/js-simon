@@ -5,8 +5,10 @@ let numList = [];
 
 buttonEl.addEventListener("click", function() {
     totNum = generateNumList(100);
-    console.log(numList);
     numbersEl.innerHTML = `${numList}`;
+    console.log(numList);
+
+    setTimeout(myFunction, 30000);
 })
 
 function generateRandomNumber (min, max) {
@@ -24,4 +26,8 @@ function generateNumList(totNum) {
         }
     }
     return numList;
+}
+
+function myFunction() {
+    numbersEl.innerHTML = ``;
 }
